@@ -1,0 +1,17 @@
+// ––––––––––––––––––––––––––––––––––––
+// Link
+// ––––––––––––––––––––––––––––––––––––
+
+a {
+  @extend .grey-dark;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    @extend .grey-light;
+  }
+
+  &:focus {
+    @extend .grey-light;
+  }
+}

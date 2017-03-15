@@ -1,0 +1,17 @@
+// ––––––––––––––––––––––––––––––––––––
+// Background Styles
+// - background-size
+// - background-position
+// - background-repeat
+// ––––––––––––––––––––––––––––––––––––
+
+// background-size
+.bg-cover { background-size: cover; }
+
+// background-position
+.bg-center { background-position: center; }
+.bg-bottom { background-position: bottom; }
+.bg-center-bottom { background-position: center bottom; }
+
+// background-repeat
+.bg-no-repeat { background-repeat: no-repeat; }

@@ -1,0 +1,78 @@
+// ––––––––––––––––––––––––––––––––––––
+// Miscellaneous
+// - image
+// - horizontal line
+// - dotted horizontal line
+// - selection
+// - display
+// - overflow
+// - shadow
+// - z-index
+// - hover
+// - border
+// - list reset
+// ––––––––––––––––––––––––––––––––––––
+
+img {
+  max-width: 100%;
+  width: 100%;
+  margin-top: 4rem; // .mt8
+  margin-bottom: 4rem; // .mb8
+}
+
+// Default Horizontal Line
+hr {
+  color: $grey-light;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid;
+  margin-top: 6rem; // .mt12
+  margin-bottom: 5.5rem; // .mb11
+}
+
+::selection {
+  color: #ffffff;
+  background-color: $grey-darker;
+}
+
+// Display
+.block { display: block; }
+.inline-block { display: inline-block; }
+
+// Overflow
+.scroll { overflow: scroll; }
+
+// Shadow
+.shadow { box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05); }
+.hover-shadow-dark:hover { box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1); }
+
+// z-index Properties
+.z1 { z-index: 1; }
+.z2 { z-index: 2; }
+.z3 { z-index: 3; }
+
+// Border Properties
+// Border Colors go to colors.scss
+.not-rounded    { border-radius: 0; }
+.rounded        { border-radius: 3px; }
+.rounded-top    { border-top-left-radius: 3px; border-top-right-radius: 3px; }
+
+@media screen and (min-width: $tablet) {
+  .sm-rounded        { border-radius: 3px; }
+}
+
+.border         { border: 1px solid; }
+.border-top     { border-top-width: 1px; border-top-style: solid; }
+.border-left    { border-left-width: 1px; border-left-style: solid; }
+.border-right   { border-right-width: 1px; border-right-style: solid;}
+.border-bottom  { border-bottom-width: 1px; border-bottom-style: solid;}
+.last-type-border-bottom:last-of-type { border-bottom-width: 1px; border-bottom-style: solid;}
+
+// Transition
+.transition-all { transition: all 0.15s ease-in-out; }
+
+// List Reset
+.list-reset {
+  list-style-type: none;
+}
