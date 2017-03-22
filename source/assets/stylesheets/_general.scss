@@ -16,11 +16,12 @@ html {
 body {
   width: 100%;
   margin: 0 auto;
-  font-size: $font-base;
-  font-family: $font-sans;
+  font-size: $font-large;
+  font-family: $font-serif;
   font-weight: 400;
   line-height: $line-height-base;
-  color: $grey-darker;
+  letter-spacing: 0.01em;
+  color: $grey-dark;
   box-sizing: border-box;
   // Better text rendering
   text-rendering: optimizeLegibility;
@@ -34,3 +35,7 @@ body {
 *::before {
   box-sizing: inherit;
 }
+
+section { margin-bottom: 160px; }
+
+p { margin: 0; }

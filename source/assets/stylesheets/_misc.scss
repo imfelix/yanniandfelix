@@ -1,56 +1,153 @@
 // ––––––––––––––––––––––––––––––––––––
 // Miscellaneous
+// - section-title divider
+// - ::selection
 // - image
-// - horizontal line
-// - dotted horizontal line
-// - selection
-// - display
-// - overflow
-// - shadow
-// - z-index
-// - hover
 // - border
+// - transition
 // - list reset
 // ––––––––––––––––––––––––––––––––––––
 
-img {
-  max-width: 100%;
+// Desktop Navbar
+.desktop-navbar {
+  position: fixed;
   width: 100%;
-  margin-top: 4rem; // .mt8
-  margin-bottom: 4rem; // .mb8
+  z-index: 1;
+  background-color: $white;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05);
 }
 
-// Default Horizontal Line
-hr {
+// Headline Section
+.headline {
+  position: relative;
+  left: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto 4rem;
+}
+
+.display-serif,
+.display-sans {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.display-serif {
+  font-size: calc(15px + (16 - 15) * (100vw - 400px) / (1024 - 400));
+  font-weight: 700;
+}
+
+.display-sans { 
+  font-family: $font-sans;
+  font-size: calc(24px + (32 - 24) * (100vw - 400px) / (1024 - 400));
+  font-weight: 300;
+}
+
+.display-ampersand {
+  font-size: calc(50px + (72 - 50) * (100vw - 400px) / (1024 - 400));
+  font-weight: 700;
+  font-style: italic;
+}
+
+.desktop-navbar-list {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 0;
+  list-style-type: none;
+  font-size: $font-small;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+// Type Settings
+.section-title {
+  position: relative;
+  margin: 0 0 3.5rem;
+  padding-bottom: 1rem;
+  color: $grey;
+  font-size: calc(24px + (27 - 24) * (100vw - 400px) / (1024 - 400));
+  font-style: italic;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background-color: $grey-lightest;
+  }
+}
+
+.title-center::after { 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.proposal-name,
+.sans-link,
+.detail-title,
+.detail-content {
+  font-family: $font-sans;
+  text-transform: uppercase;
+}
+
+.proposal-name,
+.sans-link,
+.detail-title {
+  font-size: $font-base;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.detail-content {
+  font-size: calc(20px + (24 - 20) * (100vw - 400px) / (1024 - 400));
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 5px;
+}
+
+.detail-title,
+.detail-content { margin-bottom: 0.5rem; }
+.detail-subtitle { margin: 0; }
+
+.airlines-svg { 
+  max-width: 55%;
+  height: auto;
+  max-height: 40px; 
+  align-self: center;
+  // margin-bottom: 5rem;
+}
+
+.malindo-airlines { 
+  width: auto;
+  height: auto;
+  max-height: 60px;
+  align-self: center;
+}
+
+.personal-statement { 
   color: $grey-light;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid;
-  margin-top: 6rem; // .mt12
-  margin-bottom: 5.5rem; // .mb11
+  font-style: italic;
+  line-height: $line-height-small;
 }
 
 ::selection {
   color: #ffffff;
-  background-color: $grey-darker;
+  background-color: $grey-dark;
 }
 
-// Display
-.block { display: block; }
-.inline-block { display: inline-block; }
-
-// Overflow
-.scroll { overflow: scroll; }
-
-// Shadow
-.shadow { box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05); }
-.hover-shadow-dark:hover { box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1); }
-
-// z-index Properties
-.z1 { z-index: 1; }
-.z2 { z-index: 2; }
-.z3 { z-index: 3; }
+img {
+  max-width: 100%;
+  width: 100%;
+}
 
 // Border Properties
 // Border Colors go to colors.scss
@@ -71,8 +168,3 @@ hr {
 
 // Transition
 .transition-all { transition: all 0.15s ease-in-out; }
-
-// List Reset
-.list-reset {
-  list-style-type: none;
-}

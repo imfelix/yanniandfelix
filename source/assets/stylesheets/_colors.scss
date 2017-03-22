@@ -1,47 +1,63 @@
-// ––––––––––––––––––––––––––––––––––––
-// Color Elements
-// ––––––––––––––––––––––––––––––––––––
+/* Color Collection
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$color-collection:       ($white,
+                          $blue,
+                          $grey-dark,
+                          $grey,
+                          $grey-light,
+                          $grey-lightest);
 
-// Background Color
-.bg-white                         { background-color: #ffffff; }
-.bg-grey-lightest                 { background-color: $grey-lightest; }
-.bg-grey-lighter                  { background-color: $grey-lighter; }
-.bg-grey-light                    { background-color: $grey-light; }
-.bg-grey                          { background-color: $grey; }
-.bg-grey-dark                     { background-color: $grey-dark; }
-.bg-grey-darker                   { background-color: $grey-darker; }
+$color-name-collection:  ("white",
+                          "blue",
+                          "grey-dark",
+                          "grey",
+                          "grey-light",
+                          "grey-lightest");
 
-// Border Color
-.border-grey-lightest              { border-color: $grey-lightest; }
-.border-grey-lighter               { border-color: $grey-lighter; }
-.border-grey-light                 { border-color: $grey-light; }
-.border-grey                       { border-color: $grey; }
-.border-grey-dark                  { border-color: $grey-dark; }
-.border-grey-darker                { border-color: $grey-darker; }
+/* Color Helper Mixin
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin color-helper($attribute, $color) {
+  .#{$attribute}-#{$color} { @content }
+}
 
-// Color
-.white                             { color: #ffffff; }
-.grey-lightest                     { color: $grey-lightest; }
-.grey-lighter                      { color: $grey-lighter; }
-.grey-light                        { color: $grey-light; }
-.grey                              { color: $grey; }
-.grey-dark                         { color: $grey-dark; }
-.grey-darker                       { color: $grey-darker; }
+@mixin color-helper-hover($attribute, $color) {
+  .#{$attribute}-#{$color}-hover:hover { @content }
+}
 
-// Hover Color
-.hover-white:hover                 { color: #ffffff; }
-.hover-grey-lightest:hover         { color: $grey-lightest; }
-.hover-grey-lighter:hover          { color: $grey-lighter; }
-.hover-grey-light:hover            { color: $grey-light; }
-.hover-grey:hover                  { color: $grey; }
-.hover-grey-dark:hover             { color: $grey-dark; }
-.hover-grey-darker:hover           { color: $grey-darker; }
 
-// Hover Border Color
-.hover-border-white:hover          { border-color: #ffffff; }
-.hover-border-grey-lightest:hover  { border-color: $grey-lightest; }
-.hover-border-grey-lighter:hover   { border-color: $grey-lighter; }
-.hover-border-grey-light:hover     { border-color: $grey-light; }
-.hover-border-grey:hover           { border-color: $grey; }
-.hover-border-grey-dark:hover      { border-color: $grey-dark; }
-.hover-border-grey-darker:hover    { border-color: $grey-darker; }
+/* Color Helper
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@for $i from 0 to length($color-collection) {
+  $color-name: nth($color-name-collection, $i+1);
+  $color-value: nth($color-collection, $i+1);
+
+  // Text color
+  @include color-helper('text', $color-name) {
+    color: $color-value;
+  }
+
+  // Text hover color
+  @include color-helper-hover('text', $color-name) {
+    color: $color-value;
+  }
+
+  // Background color
+  @include color-helper('bg', $color-name) {
+    background-color: $color-value;
+  }
+
+  // Background hover color
+  @include color-helper-hover('bg', $color-name) {
+    background-color: $color-value;
+  }
+
+  // Border color
+  @include color-helper('border', $color-name) {
+    border-color: $color-value;
+  }
+
+  // Border hover color
+  @include color-helper-hover('border', $color-name) {
+    border-color: $color-value;
+  }
+}

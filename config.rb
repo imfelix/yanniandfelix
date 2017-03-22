@@ -14,3 +14,11 @@ set :haml, { ugly: true, format: :html5 }
 ## Page Options and Layouts
 #################################################
 page "/sitemap.xml", layout: false
+
+#################################################
+## Developement Configuration
+#################################################
+configure :development do
+  activate  :livereload
+  activate  :syntax
+end
