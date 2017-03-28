@@ -36,6 +36,11 @@ body {
   box-sizing: inherit;
 }
 
-section { margin-bottom: 160px; }
+section { 
+  padding: 135px 0; 
 
+  &:last-of-type {
+    padding-bottom: 200px;
+  }
+}
 p { margin: 0; }

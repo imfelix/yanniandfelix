@@ -1,11 +1,9 @@
 // ––––––––––––––––––––––––––––––––––––
 // Miscellaneous
 // - section-title divider
+// - overflow
 // - ::selection
 // - image
-// - border
-// - transition
-// - list reset
 // ––––––––––––––––––––––––––––––––––––
 
 // Desktop Navbar
@@ -14,17 +12,30 @@
   width: 100%;
   z-index: 1;
   background-color: $white;
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.07);
+
+  @media (max-width: $tablet) {
+    display: none !important;
+  }
+
+}
+
+.desktop-navbar-list {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 0;
+  list-style-type: none;
 }
 
 // Headline Section
 .headline {
   position: relative;
-  left: -5px;
+  left: -10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem auto 4rem;
+  margin: 3rem auto 5rem;
 }
 
 .display-serif,
@@ -34,6 +45,7 @@
 }
 
 .display-serif {
+  align-self: center;
   font-size: calc(15px + (16 - 15) * (100vw - 400px) / (1024 - 400));
   font-weight: 700;
 }
@@ -50,16 +62,15 @@
   font-style: italic;
 }
 
-.desktop-navbar-list {
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
-  padding: 0;
-  list-style-type: none;
-  font-size: $font-small;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+// Above The Fold
+.atf-photo {
+  height: 100%;
+  max-height: 300px;
+}
+
+.atf-photo-large {
+  height: 100%;
+  max-height: 400px;
 }
 
 // Type Settings
@@ -68,7 +79,7 @@
   margin: 0 0 3.5rem;
   padding-bottom: 1rem;
   color: $grey;
-  font-size: calc(24px + (27 - 24) * (100vw - 400px) / (1024 - 400));
+  font-size: calc(23px + (25 - 23) * (100vw - 400px) / (1024 - 400));
   font-style: italic;
   font-weight: 400;
   text-transform: capitalize;
@@ -107,6 +118,31 @@
   letter-spacing: 2px;
 }
 
+.sans-link {
+  position: relative;
+  color: $blue-light;
+  align-self: flex-start;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    border-bottom: 1px solid $grey-dark;
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(0.2em);   
+  }
+}
+
+.active { color: $grey-dark; }
+
 .detail-content {
   font-size: calc(20px + (24 - 20) * (100vw - 400px) / (1024 - 400));
   font-weight: 300;
@@ -114,17 +150,31 @@
   letter-spacing: 5px;
 }
 
-.detail-title,
-.detail-content { margin-bottom: 0.5rem; }
-.detail-subtitle { margin: 0; }
+.personal-statement { 
+  color: $grey-light;
+  font-style: italic;
+  line-height: $line-height-small;
+}
 
-.airlines-svg { 
+.guides {
+  border-top: 1px solid $grey-border;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+// Images and SVGs
+.airline-svg,
+.guides-svg {
   max-width: 55%;
   height: auto;
-  max-height: 40px; 
-  align-self: center;
-  // margin-bottom: 5rem;
+  width: auto;
+  box-shadow: none;
+  object-fit: contain;
 }
+
+.airline-svg,
+.guides-svg { max-height: 40px; }
+.lonelyplanet-svg { max-height: 50px; }
 
 .malindo-airlines { 
   width: auto;
@@ -133,11 +183,18 @@
   align-self: center;
 }
 
-.personal-statement { 
-  color: $grey-light;
-  font-style: italic;
-  line-height: $line-height-small;
+// Navbar Link
+.navbar-link {
+  font-size: $font-small;
+  border-bottom: none;
+  padding: 0;
+
+  &:after {
+    display: none;
+  }
 }
+
+.overflow-hidden { overflow: hidden; }
 
 ::selection {
   color: #ffffff;
@@ -147,24 +204,7 @@
 img {
   max-width: 100%;
   width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+  object-fit: cover;
 }
 
-// Border Properties
-// Border Colors go to colors.scss
-.not-rounded    { border-radius: 0; }
-.rounded        { border-radius: 3px; }
-.rounded-top    { border-top-left-radius: 3px; border-top-right-radius: 3px; }
-
-@media screen and (min-width: $tablet) {
-  .sm-rounded        { border-radius: 3px; }
-}
-
-.border         { border: 1px solid; }
-.border-top     { border-top-width: 1px; border-top-style: solid; }
-.border-left    { border-left-width: 1px; border-left-style: solid; }
-.border-right   { border-right-width: 1px; border-right-style: solid;}
-.border-bottom  { border-bottom-width: 1px; border-bottom-style: solid;}
-.last-type-border-bottom:last-of-type { border-bottom-width: 1px; border-bottom-style: solid;}
-
-// Transition
-.transition-all { transition: all 0.15s ease-in-out; }

@@ -3,15 +3,15 @@
 // ––––––––––––––––––––––––––––––––––––
 
 a {
-  @extend .text-grey-dark;
+  @extend .text-blue-light;
   text-decoration: none;
   transition: color 0.15s ease-in-out;
 
   &:hover {
-    @extend .text-grey-light;
+    @extend .text-grey-dark;
   }
 
   &:focus {
-    @extend .text-grey-light;
+    @extend .text-grey-dark;
   }
 }

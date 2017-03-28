@@ -10,7 +10,7 @@
 .w50          { width: 50%; }
 .w65          { width: 65%; }
 .w100         { width: 100%; }
-.max-w100     { max-width: 100%; }
+.max-w115px   { max-width: 115px; }
 .max-w840px   { max-width: 840px; }
 .max-w1000px  { max-width: 1000px; }
 
@@ -19,7 +19,7 @@
 
 // Image Sizes
 .w100px       { width: 100px; }
-.h225px       { height: 225px; }
+.h200px       { height: 200px; }
 
 // Responsive Width
 @media screen and (min-width: $tablet) {
