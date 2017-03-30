@@ -6,77 +6,10 @@
 // - image
 // ––––––––––––––––––––––––––––––––––––
 
-// Desktop Navbar
-.desktop-navbar {
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-  background-color: $white;
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.07);
-
-  @media (max-width: $tablet) {
-    display: none !important;
-  }
-
-}
-
-.desktop-navbar-list {
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
-  padding: 0;
-  list-style-type: none;
-}
-
-// Headline Section
-.headline {
-  position: relative;
-  left: -10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem auto 5rem;
-}
-
-.display-serif,
-.display-sans {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-}
-
-.display-serif {
-  align-self: center;
-  font-size: calc(15px + (16 - 15) * (100vw - 400px) / (1024 - 400));
-  font-weight: 700;
-}
-
-.display-sans { 
-  font-family: $font-sans;
-  font-size: calc(24px + (32 - 24) * (100vw - 400px) / (1024 - 400));
-  font-weight: 300;
-}
-
-.display-ampersand {
-  font-size: calc(50px + (72 - 50) * (100vw - 400px) / (1024 - 400));
-  font-weight: 700;
-  font-style: italic;
-}
-
-// Above The Fold
-.atf-photo {
-  height: 100%;
-  max-height: 300px;
-}
-
-.atf-photo-large {
-  height: 100%;
-  max-height: 400px;
-}
-
 // Type Settings
 .section-title {
   position: relative;
-  margin: 0 0 3.5rem;
+  margin: 0 0 2rem;
   padding-bottom: 1rem;
   color: $grey;
   font-size: calc(23px + (25 - 23) * (100vw - 400px) / (1024 - 400));
@@ -95,11 +28,10 @@
     height: 3px;
     background-color: $grey-lightest;
   }
-}
 
-.title-center::after { 
-  left: 50%;
-  transform: translateX(-50%);
+  @media screen and (min-width: 450px) { 
+    margin: 0 0 3.5rem;
+  }
 }
 
 .proposal-name,
@@ -144,22 +76,19 @@
 .active { color: $grey-dark; }
 
 .detail-content {
-  font-size: calc(20px + (24 - 20) * (100vw - 400px) / (1024 - 400));
+  font-size: calc(22px + (24 - 22) * (100vw - 400px) / (1024 - 400));
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 5px;
 }
 
-.personal-statement { 
+.detail-title { color: $blue; }
+.detail-subtitle { color: $grey-light; }
+
+.self-statement { 
   color: $grey-light;
   font-style: italic;
   line-height: $line-height-small;
-}
-
-.guides {
-  border-top: 1px solid $grey-border;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 // Images and SVGs
@@ -170,17 +99,446 @@
   width: auto;
   box-shadow: none;
   object-fit: contain;
+  margin-bottom: 4rem;
 }
 
 .airline-svg,
 .guides-svg { max-height: 40px; }
-.lonelyplanet-svg { max-height: 50px; }
+
+.airline-svg:last-child { margin-bottom: 0; }
+
+.singapore-airlines {
+  margin: 1rem 0 6rem;
+
+  @media screen and (min-width: 450px) {
+    margin: 0 0 4rem;
+  }
+}
 
 .malindo-airlines { 
   width: auto;
   height: auto;
   max-height: 60px;
   align-self: center;
+}
+
+.guides-svg {
+  margin-bottom: 6rem;
+
+  @media screen and (min-width: 450px) { 
+    margin-bottom: 4rem;
+  }
+}
+
+.lonelyplanet-svg { max-height: 50px; }
+
+// Desktop Navbar
+.desktop-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: $white;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.07);
+
+  @media (max-width: $tablet) {
+    display: none !important;
+  }
+
+}
+
+.desktop-navbar-list {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+// Headline Section
+.headline {
+  position: relative;
+  left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto 4.5rem;
+}
+
+.display-serif,
+.display-sans {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.display-serif {
+  align-self: center;
+  font-size: calc(15px + (16 - 15) * (100vw - 400px) / (1024 - 400));
+  font-weight: 700;
+}
+
+.display-sans { 
+  font-family: $font-sans;
+  font-size: calc(28px + (32 - 28) * (100vw - 400px) / (1024 - 400));
+  font-weight: 300;
+}
+
+.display-ampersand {
+  font-size: calc(60px + (72 - 60) * (100vw - 400px) / (1024 - 400));
+  font-weight: 700;
+  font-style: italic;
+}
+
+// Above the fold section
+.atf {
+  padding-top: 65px;
+}
+
+.atf-headline-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .display-sans:first-of-type {
+    margin-right: 4.5rem;
+
+    @media screen and (min-width: 450px) { 
+      margin-right: 6rem;
+    }
+  }
+
+  .display-sans:last-of-type {
+    margin-left: 4.5rem;
+
+    @media screen and (min-width: 450px) {
+      margin-left: 6rem;
+    }
+  }
+}
+
+.atf-all-photo-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.atf-photo-small-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 450px) { 
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.atf-photo-small {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: 300px;
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: 450px) {
+    width: 48%;
+  }
+}
+
+.atf-photo-large {
+  width: 65%;
+  height: 100%;
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+.atf-photo-third {
+  width: 100%;
+  object-position: bottom;
+}
+
+.atf-photo-forth { width: 100%; }
+
+// Bride and Groom section
+.bride-and-groom { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.bride-and-groom-half {
+  width: 100%;
+
+  &:first-child { margin-bottom: 2rem; }
+
+  @media screen and (min-width: 450px) { 
+    width: 48%; 
+  }
+}
+
+// Proposal section
+.proposal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @media screen and (min-width: 450px) { 
+    align-items: center;
+  }
+}
+
+.proposal-title {
+  &::after {
+    left: auto;
+    right: 0;
+
+    @media screen and (min-width: 450px) { 
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.proposal-statements-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.proposal-statement-half {
+  width: 100%;
+
+  @media screen and (min-width: 450px) { 
+    width: 48%;
+  }
+
+  &:first-child { 
+    text-align: right; 
+
+    .proposal-statement-content {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.proposal-name {
+  margin: 0 0 0.5rem 0;
+  color: $blue;
+
+  @media screen and (min-width: 450px) { 
+    margin: 0 0 1.5rem 0;
+  }
+}
+
+.proposal-statement-content {
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: 450px) { 
+    margin-bottom: 5rem;
+  }
+}
+
+.proposal-photo-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.proposal-photo {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  width: calc(50% - 2rem) !important;
+  max-width: 100% !important;
+  max-height: 17.5rem;
+  align-self: stretch;
+  margin-bottom: 2rem;
+
+  &:nth-child(odd) { margin-right: 2rem; }
+}
+
+.proposal-photo-one { 
+  width: 100%;
+  max-width: 115px;
+  margin-right: 1rem;
+}
+
+.proposal-photo-two,
+.proposal-photo-three,
+.proposal-photo-four {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  margin: 0 auto;
+}
+
+.proposal-photo-three { height: 200px }
+.proposal-photo-four { 
+  margin-left: 0;
+
+  @media screen and (min-width: 450px) { 
+    margin-left: 1rem; 
+  }
+}
+
+// Wedding section 
+.wedding {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wedding-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.wedding-sub-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Getting there
+.getting-there {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.getting-there-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.getting-there-text-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 450px) { 
+    width: 65%;
+  }
+}
+
+.getting-there-airlines {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0 0;
+
+  @media screen and (min-width: 450px) {
+    width: 35%;
+    justify-content: space-around;
+    padding: 1rem 0;
+  }
+}
+
+// Things to do section
+.things-to-do {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.things-to-do-message {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+
+  @media screen and (min-width: 450px) { 
+    width: 65%;
+    margin-bottom: 8rem;
+  }   
+}
+
+.guides {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid $grey-border;
+  padding: 8rem 0;
+
+  @media screen and (min-width: 450px) { 
+    flex-direction: column;
+    padding: 4rem 0;
+  }
+}
+
+.guide-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 450px) { 
+    width: 35%; 
+  }
+}
+
+.guide-description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 450px) { 
+    width: 65%;
+  }
+}
+
+// Share the love section 
+.share-the-love {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .display-serif:first-of-type {
+    margin-bottom: 6rem;
+  }
+
+  .headline {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .display-sans:first-of-type {
+    margin-right: 4.5rem;
+
+    @media screen and (min-width: 450px) { 
+      margin-right: 6rem;
+    }
+  }
+
+  .display-sans:last-of-type {
+    margin-left: 4.5rem;
+
+    @media screen and (min-width: 450px) {
+      margin-left: 6rem;
+    }
+  }
 }
 
 // Navbar Link

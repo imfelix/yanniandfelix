@@ -26,9 +26,9 @@
     / JavaScript
     = javascript_include_tag :site, async: true
 
-  %body.relative.flex.flex-column.min-h100{ class: page_classes }
+  %body{ class: page_classes }
     = partial "partials/nav"
-    %main.max-w840px.w100.mx-auto.pt2.px4= yield 
+    %main= yield 
 
   / Typekit - yanniandfelix
   %script{ src: "//use.typekit.net/quj1isr.js" }

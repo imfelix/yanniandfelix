@@ -3,24 +3,24 @@ title: Yanni and Felix 👫
 ---
 
 %section.atf
-  .flex.flex-column.center
+  .atf-headline-wrapper
     %h1.hide The Marriage of Yanni & Felix
     %span.display-serif The Marriage Of
     .headline
-      %span.display-sans.mr12 Yanni
+      %span.display-sans Yanni
       %span.display-ampersand &
-      %span.display-sans.ml12 Felix
+      %span.display-sans Felix
 
-  .w100.flex.flex-column.justify-center.mx-auto
-    .w100.flex.justify-between.mb4
-      = image_tag "atf-photo-1.png", alt: "Yanni and Felix Photo 1", class: "flex-auto mr2 atf-photo"
-      = image_tag "atf-photo-2.png", alt: "Yanni and Felix Photo 2", class: "flex-auto mr2 atf-photo"
-      = image_tag "atf-photo-3.png", alt: "Yanni and Felix Photo 3", class: "flex-auto mr2 atf-photo"
-    = image_tag "atf-photo-4.png", alt: "Yanni and Felix Photo 4", class: "w65 mx-auto atf-photo-large"
+  .atf-all-photo-wrapper
+    .atf-photo-small-wrapper
+      = image_tag "atf-photo-1.png", alt: "Yanni and Felix Photo 1", class: "atf-photo-small"
+      = image_tag "atf-photo-2.png", alt: "Yanni and Felix Photo 2", class: "atf-photo-small"
+      = image_tag "atf-photo-3.png", alt: "Yanni and Felix Photo 3", class: "atf-photo-small atf-photo-third"
+    = image_tag "atf-photo-4.png", alt: "Yanni and Felix Photo 4", class: "atf-photo-large atf-photo-forth"
 
 %a{ name: "bride-and-groom" }
-%section.section.flex.justify-between.items-center
-  .w46
+%section.section.bride-and-groom
+  .bride-and-groom-half
     %h2.section-title Bride & Groom
     %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -28,15 +28,15 @@ title: Yanni and Felix 👫
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  = image_tag "bride-and-groom-photo.png", alt: "Bride and Groom Photo", class: "w46"
+  = image_tag "bride-and-groom-photo.png", alt: "Bride and Groom Photo", class: "bride-and-groom-half"
 
 %a{ name: "proposal" }
-%section.section.w100.flex.flex-column.items-center
-  %h2.section-title.title-center Proposal
-  .w100.flex.justify-between
-    .w46.right-align
-      %h4.proposal-name.mt0.mb3.text-blue Yanni
-      %p.mb10 
+%section.section.proposal
+  %h2.section-title.proposal-title Proposal
+  .proposal-statements-wrapper
+    .proposal-statement-half
+      %h4.proposal-name Yanni
+      %p.proposal-statement-content
         It was 
         %i so
         obvious
@@ -46,9 +46,9 @@ title: Yanni and Felix 👫
         It was sweet to see him to prepare all this
         %br
         Thank you, everyone who witnessed it
-    .w46
-      %h4.proposal-name.mt0.mb3.text-blue Felix
-      %p.mb10
+    .proposal-statement-half
+      %h4.proposal-name Felix
+      %p.proposal-statement-content
         My mind went blank,
         %br
         I messed up most of my plans
@@ -56,86 +56,85 @@ title: Yanni and Felix 👫
         Speech, mic, speaker – nada. None.
         %br
         Thankfully, she said yes
-  .w100.flex.justify-between.items-start.mb4
-    = image_tag "proposal-photo-1.png", alt: "Proposal Photo 1", class: "max-w115px w100 mr2"
-    = image_tag "proposal-photo-2.png", alt: "Proposal Photo 2", class: "flex-auto mx2"
-    = image_tag "proposal-photo-3.png", alt: "Proposal Photo 3", class: "h200px flex-auto mx2"
-    = image_tag "proposal-photo-4.png", alt: "Proposal Photo 4", class: "flex-auto ml2"
+  .proposal-photo-wrapper
+    = image_tag "proposal-photo-1.png", alt: "Proposal Photo 1", class: "proposal-photo proposal-photo-one"
+    = image_tag "proposal-photo-2.png", alt: "Proposal Photo 2", class: "proposal-photo proposal-photo-two"
+    = image_tag "proposal-photo-3.png", alt: "Proposal Photo 3", class: "proposal-photo proposal-photo-three"
+    = image_tag "proposal-photo-4.png", alt: "Proposal Photo 4", class: "proposal-photo proposal-photo-four"
 
 %a{ name: "wedding" }
-%section.section.w100.flex.flex-column.items-start
+%section.section.wedding
   %h2.section-title Wedding
-  .w100.flex.flex-column.justify-start
-    .flex.flex-column.mb10
-      %span.detail-title.text-blue Location
+  .wedding-wrapper
+    .wedding-sub-wrapper
+      %span.detail-title Location
       %span.detail-content Kota Kinabalu
-      %span.detail-subtitle.text-grey-light Sabah, Malaysia
-    .flex.flex-column.mb10
-      %span.detail-title.text-blue Date
+      %span.detail-subtitle Sabah, Malaysia
+    .wedding-sub-wrapper
+      %span.detail-title Date
       %span.detail-content 1 July
-      %span.detail-subtitle.text-grey-light 2017
-    .flex.flex-column
-      %span.detail-title.text-blue Ceremoney and Reception
+      %span.detail-subtitle 2017
+    .wedding-sub-wrapper
+      %span.detail-title Ceremoney and Reception
       %span.detail-content Shangri-La's Tanjung Aru Resort & Spa
-      %span.detail-subtitle.text-grey-light Celebrate good times, come on! 
+      %span.detail-subtitle Celebrate good times, come on! 
 
 %a{ name: "getting-there" }
-%section.section.w100.flex.flex-column.items-start
+%section.section.getting-there
   %h2.section-title Getting to Kota Kinabalu
-  .flex.justify-between.w100
-    .w65.flex.flex-column
+  .getting-there-wrapper
+    .getting-there-text-content
       %p.mb1 Felix’s lovely hometown, Kota Kinabalu – or as the locals call it, KK.
-      %p.mb6.personal-statement Pronounced as kay-kay. 
+      %p.mb6.self-statement Pronounced as kay-kay. 
 
       %p.mb1 Kota Kinabalu won’t immediately overwhelm you with its beauty, but you’ll soon notice its friendly locals, breathtaking fiery sunsets, blossoming arts and music scene, and rich culinary spectrum spanning Malay to Japanese, Western to Cantonese, street food to high end.
-      %p.mb6.personal-statement I didn't come up with this – it's a snippet from Lonely Planet.
+      %p.mb6.self-statement I didn't come up with this – it's a snippet from Lonely Planet.
 
       %p.mb1 As lovely as KK sounds, sadly, there are no direct flights from Brisbane to the city. We have suggested some airlines here, simply click on the airline logo to go to their website. Flight Centre has good deals too.
-      %p.mb6.personal-statement Disclaimer, we are in no way affiliated with the suggested airlines, or Flight Centre. It is purely a suggestion, feel free to choose any airline of your liking. 
+      %p.mb6.self-statement Disclaimer, we are in no way affiliated with the suggested airlines, or Flight Centre. It is purely a suggestion, feel free to choose any airline of your liking. 
 
       %p.mb1 We, the wedding couple will be in KK from the 23 June till the 3 July. Please do let the couple know if you are around for a catch-up!
-      %p.personal-statement We promise to do our best to make time!
-
-    .w35.flex.flex-column.justify-around.items-center.py2
+      %p.self-statement We promise to do our best to make time!
+    .getting-there-airlines
       = image_tag "svg/airasia-airlines-logo.svg", alt: "AirAsia", class: "airline-svg"
       = image_tag "malindo-airlines-logo.png", alt: "Malindo Airlines", class: "airline-svg malindo-airlines"
-      = image_tag "svg/malaysia-airlines-logo.svg", alt: "Malaysia Airlines", class: "airline-svg"
-      = image_tag "svg/singapore-airlines-logo.svg", alt: "Singapore Airlines", class: "airline-svg singapore-airline"
+      = image_tag "svg/malaysia-airlines-logo.svg", alt: "Malaysia Airlines", class: "airline-svg malaysia-airlines"
+      = image_tag "svg/singapore-airlines-logo.svg", alt: "Singapore Airlines", class: "airline-svg singapore-airlines"
       = image_tag "svg/flight-centre-logo.svg", alt: "Flight Centre", class: "airline-svg"
       
 %a{ name: "things-to-do" }
-%section.section.w100.flex.flex-column.items-start
+%section.section.things-to-do
   %h2.section-title Things to do in Kota Kinabalu
-  .w65.flex.flex-column.mb16
+  .things-to-do-message
     %p.mb1 There are interesting travel guides from the websites below. Each guide has it’s merits – check them out.
-    %p.personal-statement Disclaimer, we are in no way affiliated with the companies listed below. The brand logos are used for suggestion purposes only.
-  .w100.flex.justify-between.guides
-    .w35.flex.justify-center.items-center
+    %p.self-statement Disclaimer, we are in no way affiliated with the companies listed below. The brand logos are used for suggestion purposes only.
+  .guides
+    .guide-image
       = image_tag "svg/tripadvisor-australia-logo.svg", alt: "TripAdvisor Logo", class: "guides-svg"
-    .w65.flex.flex-column
+    .guide-description
       %p.mb2 Heaps of guides and reviews available on tripadvisor. The reviews are fairly up to date – be sure to have a read before booking an activity.
       = link_to "click here to tripadvisor", data.external_links.tripadvisor, class: "sans-link", target: "_blank"
-  .w100.flex.justify-between.guides
-    .w35.flex.justify-center.items-center
+  .guides
+    .guide-image
       = image_tag "svg/lonelyplanet-logo.svg", alt: "Lonely Planet Logo", class: "guides-svg lonelyplanet-svg"
-    .w65.flex.flex-column
+    .guide-description
       %p.mb2 Essential information and survival guide available here on Lonely Planet. So much information yet so easy to navigate.
       = link_to "click here here to Lonely planet", data.external_links.lonelyplanet, class: "sans-link", target: "_blank"
-  .w100.flex.justify-between.guides
-    .w35.flex.justify-center.items-center
+  .guides
+    .guide-image
       = image_tag "svg/airbnb-logo.svg", alt: "Airbnb Logo", class: "guides-svg"
-    .w65.flex.flex-column
+    .guide-description
       %p.mb2 
         No guides on airbnb but they do have quite a few listings for KK. If hotel ain’t your thing, have a go at airbnb. I heard they are quite nice. By the way, choose one with aircond. You’ll thank me later.
       = link_to "click here to airbnb", data.external_links.airbnb, class: "sans-link", target: "_blank"
     
-%section.section.flex.flex-column.center
-  %span.display-serif.mb6 share the love
+%section.section.share-the-love
+  %span.display-serif share the love
   %span.display-serif for
-  .headline.mt6.mb10
-    %span.display-sans.mr12 Yanni
+  .headline
+    %span.display-sans Yanni
     %span.display-ampersand &
-    %span.display-sans.ml12 Felix
+    %span.display-sans Felix
   .w100.justify-center
     = link_to "#yanniandfelix", data.external_links.twitter_share, target: "_blank", class: "sans-link mr15"
     = link_to "twitter", data.external_links.twitter_share, target: "_blank", class: "sans-link mr15"

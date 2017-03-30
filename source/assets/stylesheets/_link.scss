@@ -10,8 +10,4 @@ a {
   &:hover {
     @extend .text-grey-dark;
   }
-
-  &:focus {
-    @extend .text-grey-dark;
-  }
 }

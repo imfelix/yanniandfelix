@@ -73,7 +73,6 @@ window.addEventListener('load', function () {
     /* update active link */
     for (var i = 0; i < links.length; i++) {
       var id = links[i].href.split('#')[1]
-
       var section = document.querySelector('[name="' + id + '"] ~ .section')
       var top = section.getBoundingClientRect().top
       var height = section.getBoundingClientRect().height
