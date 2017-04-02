@@ -49,14 +49,10 @@ main {
 }
 
 section { 
-  padding: 50px 0; 
-
-  &:last-of-type {
-    padding-bottom: 220px;
-  }
+  padding: 6rem 0; 
 
   @media screen and (min-width: 450px) { 
-    padding: 135px 0;
+    padding: 13.5rem 0;
   }
 }
 

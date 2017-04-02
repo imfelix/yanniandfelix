@@ -38,15 +38,17 @@ function jump (target, duration) {
   }
 }
 
-// window.showMenu = function (e) {
-//   document.getElementsByClassName('js-menu')[0].classList.add('transformY-0')
-//   document.body.classList.add('overflow-hidden')
-// }
+window.showMenu = function (e) {
+  console.log("showMenu")
+  document.getElementsByClassName('js-menu')[0].classList.add('show-menu')
+  document.body.classList.add('overflow-hidden')
+}
 
-// window.hideMenu = function (e) {
-//   document.getElementsByClassName('js-menu')[0].classList.remove('transformY-0')
-//   document.body.classList.remove('overflow-hidden')
-// }
+window.hideMenu = function (e) {
+  console.log("hideMenu")
+  document.getElementsByClassName('js-menu')[0].classList.remove('show-menu')
+  document.body.classList.remove('overflow-hidden')
+}
 
 window.addEventListener('load', function () {
   var links = document.querySelectorAll('.scroll-link a')
@@ -64,11 +66,6 @@ window.addEventListener('load', function () {
       'js-scrolled',
       window.pageYOffset || document.documentElement.scrollTop
     )
-
-    // document.getElementById('js-header-button').classList.toggle(
-    //   'transformY-0',
-    //   window.pageYOffset || document.documentElement.scrollTop
-    // )
 
     /* update active link */
     for (var i = 0; i < links.length; i++) {

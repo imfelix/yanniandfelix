@@ -15,24 +15,15 @@ $grey-border:             #F0F0F0;
 // Font Sizes
 $font-base:               1.5rem; // 15px
 $font-small:              $font-base * 0.875; // 13.125px
-$font-smaller:            $font-base * 0.75;  // 11.25px
 $font-large:              $font-base * 1.25;  // 18.75px
-$font-larger:             $font-base * 1.5;   // 22.5px
-$font-double:             $font-base * 2;     // 30px
-$font-title:              $font-base * 2.5;   // 37.5px
-$font-triple:             $font-base * 3;     // 45px
 
 // Font Weight
 $font-sans:               "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-serif:              "freight-display-pro", Georgia, "Times New Roman", Times, serif;
-$font-mono:               Courier, "Lucida Console", Monaco, monospace;
 
 // Line Height
 $line-height-base:        1.5;
 $line-height-small:       1.375;
-$line-height-smaller:     1.25;
-$line-height-title:       1.125;
-$line-height-large:       1.555;
 
 // Breakpoint Size
 $tablet:                  768px;

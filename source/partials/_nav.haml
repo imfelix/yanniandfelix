@@ -1,12 +1,36 @@
-%nav#menu.desktop-navbar
-  %ul.max-w1000px.w100.desktop-navbar-list
-    %li.scroll-link.mr10
-      = link_to "Bride & Groom", "#bride-and-groom", class: "sans-link navbar-link"
-    %li.scroll-link.mr10
-      = link_to "Proposal", "#proposal", class: "sans-link navbar-link"
-    %li.scroll-link.mr10
-      = link_to "Wedding", "#wedding", class: "sans-link navbar-link"
-    %li.scroll-link.mr10
-      = link_to "Getting There", "#getting-there", class: "sans-link navbar-link"
-    %li.scroll-link
-      = link_to "Things To Do", "#things-to-do", class: "sans-link navbar-link"
+%header.desktop-nav
+  %nav#menu
+    %ul.desktop-nav-list
+      %li.scroll-link
+        = link_to "Bride & Groom", "#bride-and-groom", class: "sans-link nav-link"
+      %li.scroll-link
+        = link_to "Proposal", "#proposal", class: "sans-link nav-link"
+      %li.scroll-link
+        = link_to "Wedding", "#wedding", class: "sans-link nav-link"
+      %li.scroll-link
+        = link_to "Getting There", "#getting-there", class: "sans-link nav-link"
+      %li.scroll-link
+        = link_to "Things To Do", "#things-to-do", class: "sans-link nav-link"
+
+%header.mobile-nav
+  %a.menu-icon{ href: "javascript:void(0)", onclick: "showMenu()" }
+    %svg{ height: "10", viewbox: "0 0 20 10", width: "20" }
+      %title Toggle Menu
+      %path{ d: "M1 9h18M1 1h18", fill: "none", stroke: "#000000", "stroke-linecap" => "square" }
+
+  %nav.js-menu.mobile-nav-menu
+    %a.close-icon{ href: "javascript:void(0)", onclick: "hideMenu()" }
+      %svg{ height: "15", viewbox: "0 0 14 12"}
+        %title Close Menu
+        %path{ d: "M13 0L1 12m12 0L1 0", fill: "none", stroke: "#404A57", "stroke-linecap" => "square" }
+    %ul.mobile-nav-list
+      %li.mobile-nav-list-item
+        %a.sans-link.nav-link{ href: "#bride-and-groom", onclick: "hideMenu()" } Bride & Groom
+      %li.mobile-nav-list-item
+        %a.sans-link.nav-link{ href: "#proposal", onclick: "hideMenu()" } Proposal
+      %li.mobile-nav-list-item
+        %a.sans-link.nav-link{ href: "#wedding", onclick: "hideMenu()" } Wedding
+      %li.mobile-nav-list-item
+        %a.sans-link.nav-link{ href: "#getting-there", onclick: "hideMenu()" } Getting There
+      %li.mobile-nav-list-item
+        %a.sans-link.nav-link{ href: "#things-to-do", onclick: "hideMenu()" } Things To Do
