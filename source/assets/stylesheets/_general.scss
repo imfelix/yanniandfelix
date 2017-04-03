@@ -45,14 +45,14 @@ main {
   width: 100%;
   max-width: 840px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 
 section { 
   padding: 6rem 0; 
 
   @media screen and (min-width: 450px) { 
-    padding: 13.5rem 0;
+    padding: 10rem 0;
   }
 }
 

@@ -113,6 +113,10 @@
   @media screen and (min-width: 450px) {
     margin: 0 0 4rem;
   }
+
+  @media screen and (min-width: 450px) {
+    margin-bottom: 6rem;
+  }
 }
 
 .malindo-airlines { 
@@ -128,6 +132,10 @@
   @media screen and (min-width: 450px) { 
     margin-bottom: 4rem;
   }
+
+  @media screen and (min-width: $tablet) { 
+    margin-bottom: 0;
+  }
 }
 
 .lonelyplanet-svg { max-height: 50px; }
@@ -140,7 +148,7 @@
   background-color: $white;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.07);
 
-  @media (max-width: $tablet) {
+  @media (max-width: $tablet - 1px) {
     display: none !important;
   }
 }
@@ -170,11 +178,7 @@
   z-index: 1;
   padding: 1.5rem;
 
-  @media screen and (min-width: $tablet) and (max-width: $desktop) {
-    display: none;
-  }
-
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $tablet) {
     display: none;
   }
 }
@@ -198,11 +202,7 @@
   transform: translateY(-200%);
   transition: transform 1s ease;
 
-  @media screen and (min-width: $tablet) and (max-width: $desktop) {
-    display: none;
-  }
-
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $tablet) {
     display: none;
   }
 }
@@ -235,6 +235,10 @@
 // Above the fold section
 .atf {
   padding-top: 10rem;
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 15rem;
+  }
 }
 
 .atf-headline-wrapper {
@@ -265,7 +269,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem 0 8rem;
+  margin: 3rem 0 7rem;
 }
 
 .display-serif,
@@ -311,32 +315,62 @@
     flex-wrap: wrap;
   }
 }
+
 .atf-photo-small {
-  flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
+  width: 100%;
   height: 100%;
-  max-height: 300px;
+  max-height: 25rem;
   margin-bottom: 2rem;
 
-  @media screen and (min-width: 450px) {
-    width: 48%;
+  @media screen and (min-width: 375px) {
+    max-height: 30rem;
   }
-}
 
-.atf-photo-large {
-  width: 65%;
-  height: 100%;
-  max-height: 320px;
-  margin: 0 auto;
+  @media screen and (min-width: 450px) {
+    width: calc(50% - 1rem);
+
+    &:nth-child(1) { margin-right: 1rem; }
+    &:nth-child(2) { margin-left: 1rem; }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: auto;
+    flex: 1 1 auto;
+    max-height: 25rem;
+
+    &:nth-child(2) { margin-right: 1rem; }
+    &:nth-child(3) { margin-left: 1rem; }
+  }
 }
 
 .atf-photo-third {
   width: 100%;
   object-position: bottom;
+
+  @media screen and (min-width: 450px) { 
+    display: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: auto;
+    display: inherit;
+  }
 }
 
-.atf-photo-forth { width: 100%; }
+.atf-photo-forth {
+  width: 100%;
+  height: 100%;
+  max-height: 32rem;
+  margin: 0 auto;
+
+  @media screen and (min-width: 450px) { 
+    max-height: 40rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 65%;
+  }
+}
 
 // Bride and Groom section
 .bride-and-groom { 
@@ -427,6 +461,10 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 2rem;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+  }
 }
 
 .proposal-photo {
@@ -442,12 +480,6 @@
   &:nth-child(odd) { margin-right: 2rem; }
 }
 
-.proposal-photo-one { 
-  width: 100%;
-  max-width: 115px;
-  margin-right: 1rem;
-}
-
 .proposal-photo-two,
 .proposal-photo-three,
 .proposal-photo-four {
@@ -457,12 +489,71 @@
   margin: 0 auto;
 }
 
-.proposal-photo-three { height: 200px }
+.proposal-photo-one { 
+  width: 100%;
+  max-width: 115px;
+  margin-right: 1rem;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 20rem !important;
+    max-height: 20rem;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 10rem !important;
+    max-height: 10rem;
+    margin: 0 !important;
+  }
+}
+
+
+.proposal-photo-two {
+  @media screen and (min-width: $tablet) {
+    max-width: 27rem !important;
+    max-height: 20rem;
+    margin: 0 auto 2rem 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 20rem !important;
+    max-height: 15rem;
+    margin: 0 !important;
+  }
+}
+
+.proposal-photo-three { 
+  height: 200px;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 35rem !important;
+    height: 100%;
+    max-height: 38rem;
+    margin: 0 1rem 0 auto !important;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-height: 25rem;
+    max-width: 20rem !important;
+    margin: 0 !important;
+  }
+}
+
 .proposal-photo-four { 
   margin-left: 0;
 
   @media screen and (min-width: 450px) { 
     margin-left: 1rem; 
+  }
+
+  @media screen and (min-width: $tablet) { 
+    max-height: 38rem;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $desktop) { 
+    max-height: 30rem;
+    max-width: 25rem !important;
+    margin: 0 !important;
   }
 }
 
@@ -511,6 +602,9 @@
   display: flex;
   flex-direction: column;
 
+  p:nth-child(odd) { margin-bottom: 0.5rem; }
+  p:nth-child(even) { margin-bottom: 3rem; }
+
   @media screen and (min-width: 450px) { 
     width: 65%;
   }
@@ -529,6 +623,16 @@
     justify-content: space-around;
     padding: 1rem 0;
   }
+
+  @media screen and (min-width: $tablet) {
+    width: 30%;
+    margin: 0;
+    padding: 4rem 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 0 0 6rem;
+  }
 }
 
 // Things to do section
@@ -545,10 +649,16 @@
   flex-direction: column;
   margin-bottom: 4rem;
 
+  p { margin-bottom: 0.5rem; }
+
   @media screen and (min-width: 450px) { 
     width: 65%;
     margin-bottom: 8rem;
-  }   
+  } 
+
+  @media screen and (min-width: $tablet) {
+    width: 70%;
+  }  
 }
 
 .guides {
@@ -560,8 +670,12 @@
   padding: 8rem 0;
 
   @media screen and (min-width: 450px) { 
-    flex-direction: column;
-    padding: 4rem 0;
+    flex-direction: row;
+    padding: 4rem 2rem 4rem 0;
+  }
+
+  @media screen and (min-width: $tablet) { 
+    padding: 4rem 6rem 4rem 0;
   }
 }
 
@@ -581,6 +695,8 @@
   display: flex;
   flex-direction: column;
 
+  p { margin-bottom: 1rem; }
+
   @media screen and (min-width: 450px) { 
     width: 65%;
   }
@@ -593,6 +709,10 @@
   text-align: center;
   padding: 10rem 0 5rem;
 
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 17rem;
+  }
+
   .display-serif:first-of-type {
     margin-bottom: 4rem;
   }
@@ -603,7 +723,7 @@
   }
 
   .display-sans:first-of-type {
-    margin-right: 4.5rem;
+    margin-right: 10%;
 
     @media screen and (min-width: 450px) { 
       margin-right: 6rem;
@@ -611,9 +731,9 @@
   }
 
   .display-sans:last-of-type {
-    margin-left: 4.5rem;
+    margin-left: 10%;
 
-    @media screen and (min-width: 450px) {
+    @media screen and (min-width: 450px) { 
       margin-left: 6rem;
     }
   }
@@ -631,6 +751,11 @@
 
   @media screen and (min-width: 450px) {
     justify-content: center;
+  }
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 
