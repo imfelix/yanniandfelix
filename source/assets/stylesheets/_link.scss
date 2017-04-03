@@ -3,11 +3,11 @@
 // ––––––––––––––––––––––––––––––––––––
 
 a {
-  @extend .text-blue-light;
+  color: $blue-light;
   text-decoration: none;
   transition: color 0.15s ease-in-out;
 
   &:hover {
-    @extend .text-grey-dark;
+    color: $grey-dark;
   }
 }

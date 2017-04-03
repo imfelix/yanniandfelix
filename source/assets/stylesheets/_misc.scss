@@ -1,6 +1,17 @@
 // ––––––––––––––––––––––––––––––––––––
 // Miscellaneous
-// - section-title divider
+// - Type Settings
+// - Images and SVGs
+// - Desktop Nav
+// - Above the fold section
+// - Above the fold section - headlines
+// - Bride and Groom section
+// - Proposal section
+// - Wedding section 
+// - Getting there
+// - Things to do section
+// - Share the love section 
+// - Nav Link
 // - overflow
 // - ::selection
 // - image
@@ -53,24 +64,9 @@
 .sans-link {
   position: relative;
   color: $blue-light;
-  align-self: flex-start;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    border-bottom: 1px solid $grey-dark;
-    transform: translateY(0);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  &:hover::after {
-    opacity: 1;
-    transform: translateY(0.2em);   
-  }
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
 }
 
 .active { color: $grey-dark; }
@@ -123,7 +119,10 @@
   width: auto;
   height: auto;
   max-height: 60px;
-  align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
 }
 
 .guides-svg {
@@ -156,8 +155,12 @@
 .desktop-nav-list {
   width: 100%;
   max-width: 1000px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 2rem auto;
   padding: 0;
   list-style-type: none;
@@ -199,8 +202,12 @@
   height: 100%;
   width: 100vw;
   background-color: $white;
-  transform: translateY(-200%);
+  -webkit-transform: translateY(-200%);
+      -ms-transform: translateY(-200%);
+          transform: translateY(-200%);
+  transition: -webkit-transform 1s ease;
   transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
 
   @media screen and (min-width: $tablet) {
     display: none;
@@ -210,8 +217,12 @@
 .mobile-nav-list {
   list-style-type: none;
   padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 30% auto 0;
 }
 
@@ -229,7 +240,9 @@
 }
 
 .show-menu {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 // Above the fold section
@@ -242,8 +255,12 @@
 }
 
 .atf-headline-wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
 
   .display-sans:first-of-type {
@@ -266,9 +283,15 @@
 // Above the fold section - headlines
 .headline {
   position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 3rem 0 7rem;
 }
 
@@ -279,7 +302,10 @@
 }
 
 .display-serif {
-  align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   font-size: calc(15px + (16 - 15) * (100vw - 320px) / (1024 - 320));
   font-weight: 700;
 }
@@ -298,21 +324,37 @@
 
 .atf-all-photo-wrapper {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 auto;
 }
 
 .atf-photo-small-wrapper {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
   @media screen and (min-width: 450px) { 
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-flex-direction: row; 
+        -ms-flex-direction: row; 
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
 }
 
@@ -335,7 +377,9 @@
 
   @media screen and (min-width: $desktop) {
     width: auto;
-    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
     max-height: 25rem;
 
     &:nth-child(2) { margin-right: 1rem; }
@@ -374,10 +418,18 @@
 
 // Bride and Groom section
 .bride-and-groom { 
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-  align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; 
+  -webkit-align-items: center; 
+      -ms-flex-align: center; 
+          align-items: center;
 }
 
 .bride-and-groom-half {
@@ -393,12 +445,20 @@
 // Proposal section
 .proposal {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 
   @media screen and (min-width: 450px) { 
-    align-items: center;
+    -webkit-align-items: center; 
+        -ms-flex-align: center; 
+            align-items: center;
   }
 }
 
@@ -409,16 +469,24 @@
 
     @media screen and (min-width: 450px) { 
       left: 50%;
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
     }
   }
 }
 
 .proposal-statements-wrapper {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .proposal-statement-half {
@@ -456,10 +524,18 @@
 
 .proposal-photo-wrapper {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-bottom: 2rem;
 
   @media screen and (min-width: $tablet) {
@@ -468,13 +544,18 @@
 }
 
 .proposal-photo {
-  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   min-width: 0;
   min-height: 0;
   width: calc(50% - 2rem) !important;
   max-width: 100% !important;
   max-height: 17.5rem;
-  align-self: stretch;
+  -webkit-align-self: stretch;
+      -ms-flex-item-align: stretch;
+              -ms-grid-row-align: stretch;
+          align-self: stretch;
   margin-bottom: 2rem;
 
   &:nth-child(odd) { margin-right: 2rem; }
@@ -483,7 +564,9 @@
 .proposal-photo-two,
 .proposal-photo-three,
 .proposal-photo-four {
-  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   min-width: 0;
   min-height: 0;
   margin: 0 auto;
@@ -560,21 +643,37 @@
 // Wedding section 
 .wedding {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .wedding-wrapper {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .wedding-sub-wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 5rem;
 
   &:last-child {
@@ -585,22 +684,38 @@
 // Getting there
 .getting-there {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .getting-there-wrapper {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .getting-there-text-content {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 
   p:nth-child(odd) { margin-bottom: 0.5rem; }
   p:nth-child(even) { margin-bottom: 3rem; }
@@ -612,15 +727,25 @@
 
 .getting-there-airlines {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 8rem 0 0;
 
   @media screen and (min-width: 450px) {
     width: 35%;
-    justify-content: space-around;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
     padding: 1rem 0;
   }
 
@@ -638,15 +763,25 @@
 // Things to do section
 .things-to-do {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .things-to-do-message {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 4rem;
 
   p { margin-bottom: 0.5rem; }
@@ -663,14 +798,22 @@
 
 .guides {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-top: 1px solid $grey-border;
   padding: 8rem 0;
 
   @media screen and (min-width: 450px) { 
-    flex-direction: row;
+    -webkit-flex-direction: row; 
+        -ms-flex-direction: row; 
+            flex-direction: row;
     padding: 4rem 2rem 4rem 0;
   }
 
@@ -681,9 +824,15 @@
 
 .guide-image {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   @media screen and (min-width: 450px) { 
     width: 35%; 
@@ -692,8 +841,12 @@
 
 .guide-description {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 
   p { margin-bottom: 1rem; }
 
@@ -704,8 +857,12 @@
 
 // Share the love section 
 .share-the-love {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   padding: 10rem 0 5rem;
 
@@ -741,21 +898,34 @@
 
 .social {
   width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 
   .sans-link {
-    align-self: center;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center;
     margin-bottom: 4rem;
   }
 
   @media screen and (min-width: 450px) {
-    justify-content: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   @media screen and (min-width: $tablet) {
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
   }
 }
 
@@ -772,6 +942,19 @@
 
 .overflow-hidden { overflow: hidden; }
 
+.hide {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background-color: $grey-dark;
+}
+
 ::selection {
   color: #ffffff;
   background-color: $grey-dark;
@@ -783,4 +966,3 @@ img {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
   object-fit: cover;
 }
-
