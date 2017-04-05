@@ -97,11 +97,16 @@ title: Yanni and Felix 👫
       %p.self-statement We promise to do our best to make time!
       
     .getting-there-airlines
-      = image_tag "svg/airasia-airlines-logo.svg", alt: "AirAsia", class: "airline-svg"
-      = image_tag "malindo-airlines-logo.png", alt: "Malindo Airlines", class: "airline-svg malindo-airlines"
-      = image_tag "svg/malaysia-airlines-logo.svg", alt: "Malaysia Airlines", class: "airline-svg malaysia-airlines"
-      = image_tag "svg/singapore-airlines-logo.svg", alt: "Singapore Airlines", class: "airline-svg singapore-airlines"
-      = image_tag "svg/flight-centre-logo.svg", alt: "Flight Centre", class: "airline-svg"
+      %a.airline-link-wrapper{ href: data.external_links.airasia }
+        = image_tag "svg/airasia-airlines-logo.svg", alt: "AirAsia", class: "airline-svg"
+      %a.airline-link-wrapper{ href: data.external_links.malindo }
+        = image_tag "malindo-airlines-logo.png", alt: "Malindo Airlines", class: "airline-svg malindo-airlines"
+      %a.airline-link-wrapper{ href: data.external_links.malaysia }
+        = image_tag "svg/malaysia-airlines-logo.svg", alt: "Malaysia Airlines", class: "airline-svg malaysia-airlines"
+      %a.airline-link-wrapper{ href: data.external_links.singapore }
+        = image_tag "svg/singapore-airlines-logo.svg", alt: "Singapore Airlines", class: "airline-svg singapore-airlines"
+      %a.airline-link-wrapper{ href: data.external_links.flight_centre }
+        = image_tag "svg/flight-centre-logo.svg", alt: "Flight Centre", class: "airline-svg"
       
 %a{ name: "things-to-do" }
 %section.section.things-to-do

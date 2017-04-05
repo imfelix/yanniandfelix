@@ -90,39 +90,43 @@
 // Images and SVGs
 .airline-svg,
 .guides-svg {
-  max-width: 55%;
+  max-width: 65%;
   height: auto;
   width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: none;
   object-fit: contain;
-  margin-bottom: 5rem;
 }
 
 .airline-svg,
 .guides-svg { max-height: 40px; }
 
-.airline-svg:last-child { margin-bottom: 0; }
+.airline-svg { transition: transform 0.1s ease-in; }
+
+.malaysia-airlines { 
+  margin-bottom: 2rem; 
+
+  @media screen and (min-width: $tablet) { margin-bottom: 0; }
+}
 
 .singapore-airlines {
-  margin: 1rem 0 7rem;
+  margin-bottom: 4rem;
 
   @media screen and (min-width: 450px) {
-    margin: 0 0 4rem;
-  }
-
-  @media screen and (min-width: 450px) {
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
   }
 }
+
 
 .malindo-airlines { 
   width: auto;
   height: auto;
   max-height: 60px;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-              -ms-grid-row-align: center;
-          align-self: center;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: $tablet) { margin-bottom: 0; }
 }
 
 .guides-svg {
@@ -249,18 +253,13 @@
 .atf {
   padding-top: 10rem;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $tablet) {
     padding-top: 15rem;
   }
 }
 
 .atf-headline-wrapper {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: block;
   text-align: center;
 
   .display-sans:first-of-type {
@@ -324,42 +323,14 @@
 
 .atf-all-photo-wrapper {
   width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: block;
   margin: 0 auto;
 }
 
 .atf-photo-small-wrapper {
   width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-
-  @media screen and (min-width: 375px) {
-    min-height: 96rem;
-  }
-
-  @media screen and (min-width: 450px) { 
-    -webkit-flex-direction: row; 
-        -ms-flex-direction: row; 
-            flex-direction: row;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-  }
+  display: block;
+  line-height: 1rem;
 }
 
 .atf-photo-small {
@@ -373,21 +344,29 @@
   }
 
   @media screen and (min-width: 450px) {
-    width: calc(50% - 1rem);
+    width: calc(50% - 2px - 1rem);
+    display: inline-block;
 
     &:nth-child(1) { margin-right: 1rem; }
     &:nth-child(2) { margin-left: 1rem; }
   }
 
   @media screen and (min-width: $desktop) {
-    width: auto;
-    -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
     max-height: 25rem;
 
-    &:nth-child(2) { margin-right: 1rem; }
-    &:nth-child(3) { margin-left: 1rem; }
+    &:nth-child(1) { 
+      width: calc(33.2% - 2px - 1.33rem); 
+    }
+
+    &:nth-child(2) {
+      width: calc(33.2% - 2px - 1.33rem);
+      margin-right: 1rem; 
+    }
+
+    &:nth-child(3) { 
+      width: calc(33.2% - 2px - 1.33rem);
+      margin-left: 1rem; 
+    }
   }
 }
 
@@ -400,8 +379,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-    width: auto;
-    display: inherit;
+    display: inline-block;
   }
 }
 
@@ -412,11 +390,13 @@
   margin: 0 auto;
 
   @media screen and (min-width: 450px) { 
-    max-height: 40rem;
+    max-height: 37.5rem;
   }
 
   @media screen and (min-width: 1024px) {
-    width: 65%;
+    width: 75%;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -528,18 +508,7 @@
 
 .proposal-photo-wrapper {
   width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  display: block;
   margin-bottom: 2rem;
 
   @media screen and (min-width: $tablet) {
@@ -548,103 +517,49 @@
 }
 
 .proposal-photo {
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
-  width: calc(50% - 2rem) !important;
-  max-width: 100% !important;
+  width: calc(50% - 1rem);
+  max-width: 100%;
+  min-height: 13rem;
   max-height: 13rem;
-  -webkit-align-self: stretch;
-      -ms-flex-item-align: stretch;
-              -ms-grid-row-align: stretch;
-          align-self: stretch;
   margin-bottom: 2rem;
+  vertical-align: top;
 
   &:nth-child(odd) { margin-right: 2rem; }
+  &:nth-child(even) { margin-left: -4px; }
 
   @media screen and (min-width: 375px) {
+    min-height: 15rem;
     max-height: 15rem;
   }
-}
-
-.proposal-photo-two,
-.proposal-photo-three,
-.proposal-photo-four {
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
-  margin: 0 auto;
-}
-
-.proposal-photo-one { 
-  width: 100%;
-  max-width: 115px;
-  margin-right: 1rem;
 
   @media screen and (min-width: $tablet) {
-    max-width: 20rem !important;
-    max-height: 20rem;
-  }
-
-  @media screen and (min-width: $desktop) {
-    max-width: 10rem !important;
-    max-height: 10rem;
-    margin: 0 !important;
-  }
-}
-
-
-.proposal-photo-two {
-  @media screen and (min-width: $tablet) {
-    max-width: 27rem !important;
-    max-height: 20rem;
-    margin: 0 auto 2rem 0;
-  }
-
-  @media screen and (min-width: $desktop) {
-    max-width: 20rem !important;
-    max-height: 15rem;
-    margin: 0 !important;
-  }
-}
-
-.proposal-photo-three { 
-  height: 200px;
-
-  @media screen and (min-width: $tablet) {
-    max-width: 35rem !important;
-    height: 100%;
-    max-height: 38rem;
-    margin: 0 1rem 0 auto !important;
-  }
-
-  @media screen and (min-width: $desktop) {
-    max-height: 25rem;
-    max-width: 20rem !important;
-    margin: 0 !important;
-  }
-}
-
-.proposal-photo-four { 
-  margin-left: 0;
-
-  @media screen and (min-width: 450px) { 
-    margin-left: 1rem; 
-  }
-
-  @media screen and (min-width: $tablet) { 
-    max-height: 38rem;
-    margin-bottom: 0;
-  }
-
-  @media screen and (min-width: $desktop) { 
+    min-height: 30rem;
     max-height: 30rem;
-    max-width: 25rem !important;
-    margin: 0 !important;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .proposal-photo-one {
+    width: 10rem;
+    min-height: auto;
+    max-height: 10rem;
+  }
+  
+  .proposal-photo-two {
+    width: 20rem;
+    min-height: auto;
+    margin-right: 2rem;
+  }
+
+  .proposal-photo-three {
+    width: 20rem;
+    min-height: auto;
+    margin-left: -4px;
+  }
+
+  .proposal-photo-four {
+    width: 24rem;
+    min-height: auto;
   }
 }
 
@@ -764,8 +679,19 @@
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 0 0 6rem;
+    padding: 3rem 0 6rem;
   }
+}
+
+.airline-link-wrapper { 
+  width: 100%; 
+  margin-bottom: 4rem;
+
+  &:last-child { margin-bottom: 0; }
+
+  &:hover > .airline-svg { transform: scale(1.15); }
+
+  @media screen and (min-width: $tablet) { margin-bottom: 0; }
 }
 
 // Things to do section
@@ -874,9 +800,8 @@
   text-align: center;
   padding: 10rem 0 5rem;
 
-  @media screen and (min-width: 1024px) {
-    padding-bottom: 15rem;
-  }
+  @media screen and (min-width: $tablet) { padding-bottom: 17rem; }
+  @media screen and (min-width: $desktop) { padding-bottom: 15rem; }
 
   .display-serif:first-of-type {
     margin-bottom: 4rem;
