@@ -22,6 +22,11 @@
     / = partial "partials/analytics"
 
     / JavaScript
+    = javascript_include_tag :blazy
+    :javascript
+      ;(function() {
+          var bLazy = new Blazy();
+      })();
     = javascript_include_tag :site, async: true
 
   %body{ class: page_classes }

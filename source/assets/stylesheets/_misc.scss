@@ -355,16 +355,16 @@
     max-height: 25rem;
 
     &:nth-child(1) { 
-      width: calc(33.2% - 2px - 1.33rem); 
+      width: calc(33.2% - 2px - 1rem); 
     }
 
     &:nth-child(2) {
-      width: calc(33.2% - 2px - 1.33rem);
+      width: calc(33.2% - 2px - 2rem);
       margin-right: 1rem; 
     }
 
     &:nth-child(3) { 
-      width: calc(33.2% - 2px - 1.33rem);
+      width: calc(33.2% - 2px - 1rem);
       margin-left: 1rem; 
     }
   }
