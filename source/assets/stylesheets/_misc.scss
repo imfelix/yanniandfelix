@@ -348,6 +348,10 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 
+  @media screen and (min-width: 375px) {
+    min-height: 96rem;
+  }
+
   @media screen and (min-width: 450px) { 
     -webkit-flex-direction: row; 
         -ms-flex-direction: row; 
@@ -551,7 +555,7 @@
   min-height: 0;
   width: calc(50% - 2rem) !important;
   max-width: 100% !important;
-  max-height: 17.5rem;
+  max-height: 13rem;
   -webkit-align-self: stretch;
       -ms-flex-item-align: stretch;
               -ms-grid-row-align: stretch;
@@ -559,6 +563,10 @@
   margin-bottom: 2rem;
 
   &:nth-child(odd) { margin-right: 2rem; }
+
+  @media screen and (min-width: 375px) {
+    max-height: 15rem;
+  }
 }
 
 .proposal-photo-two,
@@ -867,7 +875,7 @@
   padding: 10rem 0 5rem;
 
   @media screen and (min-width: 1024px) {
-    padding-bottom: 17rem;
+    padding-bottom: 15rem;
   }
 
   .display-serif:first-of-type {
