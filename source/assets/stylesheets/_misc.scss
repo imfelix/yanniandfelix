@@ -352,7 +352,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-    max-height: 25rem;
+    height: 25rem;
 
     &:nth-child(1) { 
       width: calc(33.2% - 2px - 1rem); 

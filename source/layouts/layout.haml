@@ -13,21 +13,20 @@
     = partial "partials/favicon"
 
     / Stylesheet
-    = partial "inline-stylesheet/font-loading"
-    / = partial "inline-stylesheet/site"
-    = stylesheet_link_tag :site
+    = partial "inline/font-loading"
+    = partial "inline/site-css"
 
     / Google Analytics
-    / TODO ADD ANALYTICS
-    / = partial "partials/analytics"
+    = partial "partials/analytics"
 
     / JavaScript
-    = javascript_include_tag :blazy
+    / blazy.js
+    = partial "inline/blazy"
     :javascript
       ;(function() {
           var bLazy = new Blazy();
       })();
-    = javascript_include_tag :site, async: true
+    = partial "inline/site-js"
 
   %body{ class: page_classes }
     = partial "partials/nav"

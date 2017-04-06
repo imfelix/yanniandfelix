@@ -13,14 +13,10 @@ title: Yanni and Felix 👫
 
   .atf-all-photo-wrapper
     .atf-photo-small-wrapper
-      %img.b-lazy.atf-photo-small{ src: "/assets/images/atf-photo-1-low.png", "data-src": "/assets/images/atf-photo-1.png", alt: "Yanni and Felix Photo 1" }
-      %img.b-lazy.atf-photo-small{ src: "/assets/images/atf-photo-2-low.png", "data-src": "/assets/images/atf-photo-2.png", alt: "Yanni and Felix Photo 2" }
-      %img.b-lazy.atf-photo-small.atf-photo-third{ src: "/assets/images/atf-photo-3-low.png", "data-src": "/assets/images/atf-photo-3.png", alt: "Yanni and Felix Photo 3" }
-      / = image_tag "atf-photo-1.png", alt: "Yanni and Felix Photo 1", class: "atf-photo-small"
-      / = image_tag "atf-photo-2.png", alt: "Yanni and Felix Photo 2", class: "atf-photo-small"
-      / = image_tag "atf-photo-3.png", alt: "Yanni and Felix Photo 3", class: "atf-photo-small atf-photo-third"
-    %img.b-lazy.atf-photo-forth{ src: "/assets/images/atf-photo-4-low.png", "data-src": "/assets/images/atf-photo-4.png", alt: "Yanni and Felix Photo 4" }
-    / = image_tag "atf-photo-4.png", alt: "Yanni and Felix Photo 4", class: "atf-photo-forth"
+      = image_tag "atf-photo-1.png", alt: "Yanni and Felix Photo 1", class: "atf-photo-small"
+      = image_tag "atf-photo-2.png", alt: "Yanni and Felix Photo 2", class: "atf-photo-small"
+      = image_tag "atf-photo-3.png", alt: "Yanni and Felix Photo 3", class: "atf-photo-small atf-photo-third"
+    = image_tag "atf-photo-4.png", alt: "Yanni and Felix Photo 4", class: "atf-photo-forth"
 
 %a{ name: "bride-and-groom" }
 %section.section.bride-and-groom
@@ -66,10 +62,6 @@ title: Yanni and Felix 👫
     %img.b-lazy.proposal-photo.proposal-photo-two{ src: "/assets/images/proposal-photo-2-low.png", "data-src": "/assets/images/proposal-photo-2.png", alt: "Proposal Photo 2" }
     %img.b-lazy.proposal-photo.proposal-photo-three{ src: "/assets/images/proposal-photo-3-low.png", "data-src": "/assets/images/proposal-photo-3.png", alt: "Proposal Photo 3" }
     %img.b-lazy.proposal-photo.proposal-photo-four{ src: "/assets/images/proposal-photo-4-low.png", "data-src": "/assets/images/proposal-photo-4.png", alt: "Proposal Photo 4" }
-    / = image_tag "proposal-photo-1.png", alt: "Proposal Photo 1", class: "proposal-photo proposal-photo-one"
-    / = image_tag "proposal-photo-2.png", alt: "Proposal Photo 2", class: "proposal-photo proposal-photo-two"
-    / = image_tag "proposal-photo-3.png", alt: "Proposal Photo 3", class: "proposal-photo proposal-photo-three"
-    / = image_tag "proposal-photo-4.png", alt: "Proposal Photo 4", class: "proposal-photo proposal-photo-four"
 
 %a{ name: "wedding" }
 %section.section.wedding

@@ -10,16 +10,16 @@ body {
 html {
   height: 100%;
   margin: 0;
-  font-size: 62.5%; // 1rem = 10px
+  font-size: 10px;
 }
 
 body {
   width: 100%;
   margin: 0 auto;
-  font-size: $font-large;
+  font-size: 18.75px;
   font-family: $font-serif;
   font-weight: 400;
-  line-height: $line-height-base;
+  line-height: 1.5;
   letter-spacing: 0.01em;
   color: $grey-dark;
   box-sizing: border-box;
